@@ -17,4 +17,4 @@ function solution(s) {
 }
 
 let str = 'KKHSSSSSSSE'
-console.log(solution(str))
+console.log(solution(str)) // K2HS7E

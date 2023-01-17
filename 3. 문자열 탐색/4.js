@@ -26,4 +26,4 @@ function solution(s, t) {
 }
 
 let str = 'teachermode'
-console.log(solution(str, 'e'))
+console.log(solution(str, 'e')) // [1, 0, 1, 2, 1, 0, 1, 2, 2, 1, 0]
