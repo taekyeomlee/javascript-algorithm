@@ -25,7 +25,7 @@ var orangesRotting = function (grid) {
     for (let i = 0; i < len; i++) {
       const [r, c] = queue.shift()
       for (const [dr, dc] of dirs) {
-        if (r + dr < 0 || r + dr >= grid.length || c + dc < 0 || c + dc >= grid[0].length) continue
+        if (r + dr < 0 || c + dc < 0 || r + dr >= grid.length || c + dc >= grid[r + dr].length) continue
         if (grid[r + dr][c + dc] === 1) {
           grid[r + dr][c + dc] = 2
           queue.push([r + dr, c + dc])
@@ -37,4 +37,3 @@ var orangesRotting = function (grid) {
   }
   return oranges === 0 ? time : -1
 }
-Console
