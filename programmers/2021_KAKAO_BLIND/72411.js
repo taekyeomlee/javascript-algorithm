@@ -28,7 +28,7 @@ function solution(orders, course) {
 
 function combination(arr, num) {
   const result = []
-  if (num === 1) return arr
+  if (num === 1) return arr.map((el) => [el])
   arr.forEach((fix, idx, ori) => {
     const rest = ori.slice(idx + 1)
     const combiArr = combination(rest, num - 1)
