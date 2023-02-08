@@ -19,7 +19,7 @@ var numIslands = function (grid) {
 
 function dfs(grid, r, c) {
   if (r < 0 || c < 0 || r >= grid.length || c >= grid[r].length || grid[r][c] !== '1') return
-  grid[r][c] = 'X'
+  grid[r][c] = '2'
   dfs(grid, r - 1, c)
   dfs(grid, r + 1, c)
   dfs(grid, r, c - 1)
