@@ -6,9 +6,8 @@
  * @return {number[][]}
  */
 const combinationSum2 = (candidates, target) => {
-  const result = []
-
   candidates.sort((a, b) => a - b)
+  const result = []
 
   const backtrack = (cur, sum, start) => {
     if (sum === target) {
@@ -21,7 +20,7 @@ const combinationSum2 = (candidates, target) => {
     }
 
     for (let i = start; i < candidates.length; i++) {
-      if (i !== start && candidates[i] === candidates[i - 1]) continue
+      if (i > start && candidates[i] === candidates[i - 1]) continue
 
       cur.push(candidates[i])
       backtrack(cur, sum + candidates[i], i + 1)
