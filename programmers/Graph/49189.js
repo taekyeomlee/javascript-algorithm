@@ -6,7 +6,7 @@ function solution(n, edge) {
     graph[to].push(from)
   }
 
-  const dists = new Array(n + 1).fill(Infinity)
+  const dists = Array.from({ length: n + 1 }, () => Infinity)
   dists[1] = 0
 
   const queue = [[1, 0]]
