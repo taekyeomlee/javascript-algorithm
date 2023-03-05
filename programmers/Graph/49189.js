@@ -6,22 +6,21 @@ function solution(n, edge) {
     graph[to].push(from)
   }
 
-  const dists = Array.from({ length: n + 1 }, () => Infinity)
-  dists[1] = 0
+  const dists = Array.from({ length: n + 1 }, () => 0)
+  dists[1] = 1
 
-  const queue = [[1, 0]]
+  const queue = [1]
 
   while (queue.length > 0) {
-    const [cur, dist] = queue.shift()
-
-    if (dist > dists[cur]) {
-      continue
-    } else {
-      dists[cur] = dist
-    }
+    const cur = queue.shift()
 
     for (const next of graph[cur]) {
-      queue.push([next, dist + 1])
+      if (dists[next]) {
+        continue
+      }
+
+      dists[next] = dists[cur] + 1
+      queue.push(next)
     }
   }
 
