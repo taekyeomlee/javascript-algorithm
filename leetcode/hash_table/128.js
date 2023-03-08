@@ -4,6 +4,11 @@
  * @param {number[]} nums
  * @return {number}
  */
+
+/**
+ * Union Find
+ */
+
 var longestConsecutive = function (nums) {
   const set = new Set(nums)
   let max = 0
