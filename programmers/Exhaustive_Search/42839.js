@@ -6,7 +6,7 @@ function solution(numbers) {
   const used = Array.from({ length: numbers.length }, () => false)
   const result = new Set()
 
-  const permutation = (cur) => {
+  const backtrack = (cur) => {
     if (cur.length > nums.length) {
       return
     }
@@ -20,12 +20,12 @@ function solution(numbers) {
       if (used[i] || (i > 0 && nums[i] === nums[i - 1] && !used[i - 1])) continue
 
       used[i] = true
-      permutation(cur + nums[i])
+      backtrack(cur + nums[i])
       used[i] = false
     }
   }
 
-  permutation('')
+  backtrack('')
 
   return result.size
 }
